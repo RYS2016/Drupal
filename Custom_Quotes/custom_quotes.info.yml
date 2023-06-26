@@ -1,0 +1,6 @@
+name: 'Custom Quotes'
+type: module
+description: 'Allows users to add and display random quotes on their site.'
+package: Custom
+core_version_requirement: ^8 || ^9
+version: 1.0
