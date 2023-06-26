@@ -1,0 +1,8 @@
+name: 'Custom Views Plugins'
+type: module
+description: 'Provides custom views plugins for advanced node filtering.'
+package: Custom
+core_version_requirement: ^8 || ^9
+version: 1.0
+dependencies:
+  - views
