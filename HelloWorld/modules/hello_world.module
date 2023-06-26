@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * Implements hook_help().
+ */
+function hello_world_help($route_name, $route_match) {
+  switch ($route_name) {
+    case 'help.page.hello_world':
+      return '<p>' . t('Displays a simple greeting message on a page.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function hello_world_menu() {
+  $items['hello'] = [
+    'title' => 'Hello World',               // The title displayed for the menu link
+    'page callback' => 'hello_world_page',  // The function that will be called to render the page
+    'access callback' => TRUE,              // The access callback function or a boolean value indicating access permission
+  ];
+  return $items;
+}
+
+/**
+ * Page callback for the custom "hello" path.
+ */
+function hello_world_page() {
+  return [
+    '#markup' => '<p>Hello, World!</p>',    // The HTML markup that will be displayed on the page
+  ];
+}
+

@@ -1,0 +1,6 @@
+name: 'Hello World'
+type: module
+description: 'Displays a simple greeting message'
+core_version_requirement: ^8 || ^9
+package: Custom
+version: 1.0
