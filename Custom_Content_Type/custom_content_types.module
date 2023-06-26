@@ -1,0 +1,43 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custom_content_types_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.custom_content_types':
+      return '<p>' . t('Allows users to create and manage custom content types in Drupal.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_entity_type_alter().
+ */
+function custom_content_types_entity_type_alter(array &$entity_types) {
+  // Define custom content types here.
+  $custom_types = [
+    'custom_article' => [
+      'label' => 'Custom Article',
+      'base_table' => 'node',
+      'entity_keys' => [
+        'id' => 'nid',
+        'label' => 'title',
+      ],
+    ],
+    'custom_event' => [
+      'label' => 'Custom Event',
+      'base_table' => 'node',
+      'entity_keys' => [
+        'id' => 'nid',
+        'label' => 'title',
+      ],
+    ],
+  ];
+
+  // Add custom content types to the entity types array.
+  foreach ($custom_types as $type => $info) {
+    $entity_types[$type] = $info;
+  }
+}

@@ -1,0 +1,8 @@
+name: 'Custom Content Types'
+type: module
+description: 'Allows users to create and manage custom content types.'
+package: Custom
+core_version_requirement: ^8 || ^9
+version: 1.0
+dependencies:
+  - node
